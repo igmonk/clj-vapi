@@ -14,6 +14,14 @@ Add the following module to the list of JVM options inside your `deps.edn`:
 
 ## Installation
 
+#### Clojure CLI/deps.edn
+
+```edn
+com.github.igmonk/clj-vapi {:mvn/version "0.1.0-SNAPSHOT"}
+```
+
+#### Leiningen/Boot
+
 ```edn
 [com.github.igmonk/clj-vapi "0.1.0-SNAPSHOT"]
 ```
