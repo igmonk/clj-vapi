@@ -4,6 +4,7 @@ Vectorised array operations leveraging Java Vector API for SIMD parallelism.
 
 ## Prerequisites
 
+- Clojure >= 1.12.0
 - [jdk.incubator.vector](https://download.java.net/java/early_access/jdk24/docs/api/jdk.incubator.vector/module-summary.html)
 
 Add the following module to the list of JVM options inside your `deps.edn`:
