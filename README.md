@@ -1,4 +1,4 @@
-# clj-vapi/core
+# clj-vapi
 
 Vectorised array operations leveraging Java Vector API for SIMD parallelism.
 
