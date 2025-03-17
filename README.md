@@ -43,6 +43,8 @@ Use `vadd` to add two arrays element-wise:
         (int-array (range 1000))))
 ```
 
+Refer to [examples/clj_vapi](examples/clj_vapi) for more examples.
+
 ## Benchmarks
 
 Execution time estimation using [criterium](https://github.com/hugoduncan/criterium):
