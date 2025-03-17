@@ -6,12 +6,12 @@
   [a]
   (letfn [(base-type [ty]
             (cond
-              (= ty byte/1) (->AMeta byte/1 aset-byte)
-              (= ty short/1) (->AMeta short/1 aset-short)
-              (= ty int/1) (->AMeta int/1  aset-int)
-              (= ty long/1) (->AMeta long/1 aset-long)
-              (= ty float/1) (->AMeta float/1 aset-float)
-              (= ty double/1) (->AMeta double/1 aset-double)
+              (= ty byte/1) (->AMeta Byte/TYPE aset-byte)
+              (= ty short/1) (->AMeta Short/TYPE aset-short)
+              (= ty int/1) (->AMeta Integer/TYPE aset-int)
+              (= ty long/1) (->AMeta Long/TYPE aset-long)
+              (= ty float/1) (->AMeta Float/TYPE aset-float)
+              (= ty double/1) (->AMeta Double/TYPE aset-double)
               (.isArray ty) (recur (.getComponentType ty))
               :else
               (throw (IllegalArgumentException.
