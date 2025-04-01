@@ -9,9 +9,6 @@
   (testing "vsum-byte"
     (is (= 55 (vsum (byte-array range-1-11)))))
 
-  (testing "vsum-short"
-    (is (= 55 (vsum (short-array range-1-11)))))
-
   (testing "vsum-int"
     (is (= 55 (vsum (int-array range-1-11)))))
 
@@ -39,7 +36,6 @@
 (deftest vsum-2d-test
   (testing "vsum-2d integral"
     (run-2d-int-tests u/byte-2d-array)
-    (run-2d-int-tests u/short-2d-array)
     (run-2d-int-tests u/int-2d-array)
     (run-2d-int-tests u/long-2d-array))
 

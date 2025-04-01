@@ -20,7 +20,6 @@
 
 (extend-protocol p/VSum
   byte/1 (vsum [a] (vreduce-sum ByteVector a))
-  short/1 (vsum [a] (vreduce-sum ShortVector a))
   int/1 (vsum [a] (vreduce-sum IntVector a))
   long/1 (vsum [a] (vreduce-sum LongVector a))
   float/1 (vsum [a] (vreduce-sum FloatVector a))
@@ -34,7 +33,6 @@
 
 (extend-protocol p/VProd
   byte/1 (vprod [a] (vreduce-prod ByteVector a))
-  short/1 (vprod [a] (vreduce-prod ShortVector a))
   int/1 (vprod [a] (vreduce-prod IntVector a))
   long/1 (vprod [a] (vreduce-prod LongVector a))
   float/1 (vprod [a] (vreduce-prod FloatVector a))

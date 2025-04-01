@@ -9,14 +9,6 @@
   (testing "vprod-byte"
     (is (= 3628800 (vprod (byte-array range-1-11)))))
 
-  ;; Note: Overflow
-  ;; (1*2*3*4*5*6*7*8-32767) - 32768 - 1 = -25216
-  ;; Short.MAX_VALUE = 32767
-  ;; Short.MIN_VALUE = -32768
-  ;; Consider using Vector.convert or Vector.convertShape fn.
-  (testing "vprod-short"
-    (is (= -25216 (vprod (short-array (range 1 9))))))
-
   (testing "vprod-int"
     (is (= 3628800 (vprod (int-array range-1-11)))))
 
@@ -44,7 +36,6 @@
 (deftest vprod-2d-test
   (testing "vprod-2d integral"
     (run-2d-int-tests u/byte-2d-array)
-    (run-2d-int-tests u/short-2d-array)
     (run-2d-int-tests u/int-2d-array)
     (run-2d-int-tests u/long-2d-array))
 
