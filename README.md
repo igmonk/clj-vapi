@@ -2,6 +2,8 @@
 
 Vectorised array operations leveraging Java Vector API for SIMD parallelism.
 
+![PR Check Status](https://github.com/igmonk/clj-vapi/actions/workflows/pr_check.yaml/badge.svg)
+
 ## Prerequisites
 
 - Clojure >= 1.12.0
