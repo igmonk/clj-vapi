@@ -52,3 +52,11 @@
 (defn vtest-gt? [x1 x2] (p/vtest-gt? x1 x2))
 (defn vtest-ge? [x1 x2] (p/vtest-ge? x1 x2))
 
+;; ------------------ Bitwise Op FNs ------------------
+
+(defn vbit-and [x1 x2] (p/vbit-and x1 x2))
+(defn vbit-or [x1 x2] (p/vbit-or x1 x2))
+(defn vbit-xor [x1 x2] (p/vbit-xor x1 x2))
+(defn vbit-not [x] (p/vbit-not x))
+(defn vbit-and-not [x1 x2] (p/vbit-and-not x1 x2))
+

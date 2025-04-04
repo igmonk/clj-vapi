@@ -88,5 +88,10 @@
   p/VTestLT (vtest-lt? [x1 x2] (vtest-md p/vtest-lt? x1 x2))
   p/VTestLE (vtest-le? [x1 x2] (vtest-md p/vtest-le? x1 x2))
   p/VTestGT (vtest-gt? [x1 x2] (vtest-md p/vtest-gt? x1 x2))
-  p/VTestGE (vtest-ge? [x1 x2] (vtest-md p/vtest-ge? x1 x2)))
+  p/VTestGE (vtest-ge? [x1 x2] (vtest-md p/vtest-ge? x1 x2))
+  p/VBitAnd (vbit-and [x1 x2] (vmap-md p/vbit-and x1 x2))
+  p/VBitOr (vbit-or [x1 x2] (vmap-md p/vbit-or x1 x2))
+  p/VBitXor (vbit-xor [x1 x2] (vmap-md p/vbit-xor x1 x2))
+  p/VBitNot (vbit-not [x] (vmap-md p/vbit-not x))
+  p/VBitAndNot (vbit-and-not [x1 x2] (vmap-md p/vbit-and-not x1 x2)))
 
