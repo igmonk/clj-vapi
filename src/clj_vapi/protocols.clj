@@ -46,3 +46,11 @@
 (defprotocol VTestGT (vtest-gt? [a1 a2]))
 (defprotocol VTestGE (vtest-ge? [a1 a2]))
 
+;; ------------------ Bitwise Op FNs ------------------
+
+(defprotocol VBitAnd (vbit-and [a1 a2]))
+(defprotocol VBitOr (vbit-or [a1 a2]))
+(defprotocol VBitXor (vbit-xor [a1 a2]))
+(defprotocol VBitNot (vbit-not [a]))
+(defprotocol VBitAndNot (vbit-and-not [a1 a2]))
+

@@ -390,3 +390,55 @@
   float/1 (vtest-ge? [a1 a2] (lanewise-test-ge? FloatVector a1 a2))
   double/1 (vtest-ge? [a1 a2] (lanewise-test-ge? DoubleVector a1 a2)))
 
+;; ------------------ Bitwise Op FNs ------------------
+
+(defmacro lanewise-bit-and
+  [v-type a1 a2]
+  `(lanewise ~v-type bit-and VectorOperators/AND ~a1 ~a2))
+
+(extend-protocol p/VBitAnd
+  byte/1 (vbit-and [a1 a2] (lanewise-bit-and ByteVector a1 a2))
+  short/1 (vbit-and [a1 a2] (lanewise-bit-and ShortVector a1 a2))
+  int/1 (vbit-and [a1 a2] (lanewise-bit-and IntVector a1 a2))
+  long/1 (vbit-and [a1 a2] (lanewise-bit-and LongVector a1 a2)))
+
+(defmacro lanewise-bit-or
+  [v-type a1 a2]
+  `(lanewise ~v-type bit-or VectorOperators/OR ~a1 ~a2))
+
+(extend-protocol p/VBitOr
+  byte/1 (vbit-or [a1 a2] (lanewise-bit-or ByteVector a1 a2))
+  short/1 (vbit-or [a1 a2] (lanewise-bit-or ShortVector a1 a2))
+  int/1 (vbit-or [a1 a2] (lanewise-bit-or IntVector a1 a2))
+  long/1 (vbit-or [a1 a2] (lanewise-bit-or LongVector a1 a2)))
+
+(defmacro lanewise-bit-xor
+  [v-type a1 a2]
+  `(lanewise ~v-type bit-xor VectorOperators/XOR ~a1 ~a2))
+
+(extend-protocol p/VBitXor
+  byte/1 (vbit-xor [a1 a2] (lanewise-bit-xor ByteVector a1 a2))
+  short/1 (vbit-xor [a1 a2] (lanewise-bit-xor ShortVector a1 a2))
+  int/1 (vbit-xor [a1 a2] (lanewise-bit-xor IntVector a1 a2))
+  long/1 (vbit-xor [a1 a2] (lanewise-bit-xor LongVector a1 a2)))
+
+(defmacro lanewise-bit-not
+  [v-type a]
+  `(lanewise ~v-type bit-not VectorOperators/NOT ~a))
+
+(extend-protocol p/VBitNot
+  byte/1 (vbit-not [a] (lanewise-bit-not ByteVector a))
+  short/1 (vbit-not [a] (lanewise-bit-not ShortVector a))
+  int/1 (vbit-not [a] (lanewise-bit-not IntVector a))
+  long/1 (vbit-not [a] (lanewise-bit-not LongVector a)))
+
+(defmacro lanewise-bit-and-not
+  [v-type a1 a2]
+  `(lanewise ~v-type bit-and-not VectorOperators/AND_NOT ~a1 ~a2))
+
+(extend-protocol p/VBitAndNot
+  byte/1 (vbit-and-not [a1 a2] (lanewise-bit-and-not ByteVector a1 a2))
+  short/1 (vbit-and-not [a1 a2] (lanewise-bit-and-not ShortVector a1 a2))
+  int/1 (vbit-and-not [a1 a2] (lanewise-bit-and-not IntVector a1 a2))
+  long/1 (vbit-and-not [a1 a2] (lanewise-bit-and-not LongVector a1 a2)))
+
