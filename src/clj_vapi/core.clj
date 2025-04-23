@@ -41,6 +41,9 @@
 (defn vasin [x] (p/vasin x))
 (defn vatan [x] (p/vatan x))
 (defn vhypot [x1 x2] (p/vhypot x1 x2))
+(defn vcosh [x] (p/vcosh x))
+(defn vsinh [x] (p/vsinh x))
+(defn vtanh [x] (p/vtanh x))
 
 ;; ------------------ Comparison & Test FNs ------------------
 

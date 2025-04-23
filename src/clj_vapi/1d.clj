@@ -290,6 +290,36 @@
   float/1 (vhypot [a1 a2] (vmap-hypot FloatVector a1 a2))
   double/1 (vhypot [a1 a2] (vmap-hypot DoubleVector a1 a2)))
 
+;; ------------------ vcosh ------------------
+
+(defmacro vmap-cosh
+  [v-type a]
+  `(lanewise ~v-type math/cosh VectorOperators/COSH ~a))
+
+(extend-protocol p/VCosh
+  float/1 (vcosh [a] (vmap-cosh FloatVector a))
+  double/1 (vcosh [a] (vmap-cosh DoubleVector a)))
+
+;; ------------------ vsinh ------------------
+
+(defmacro vmap-sinh
+  [v-type a]
+  `(lanewise ~v-type math/sinh VectorOperators/SINH ~a))
+
+(extend-protocol p/VSinh
+  float/1 (vsinh [a] (vmap-sinh FloatVector a))
+  double/1 (vsinh [a] (vmap-sinh DoubleVector a)))
+
+;; ------------------ vtanh ------------------
+
+(defmacro vmap-tanh
+  [v-type a]
+  `(lanewise ~v-type math/tanh VectorOperators/TANH ~a))
+
+(extend-protocol p/VTanh
+  float/1 (vtanh [a] (vmap-tanh FloatVector a))
+  double/1 (vtanh [a] (vmap-tanh DoubleVector a)))
+
 ;; ------------------ Comparison & Test FNs ------------------
 
 ;; ------------------ vtest-neg? ------------------
