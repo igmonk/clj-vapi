@@ -35,6 +35,9 @@
 (defprotocol VAsin (vasin [a]))
 (defprotocol VAtan (vatan [a]))
 (defprotocol VHypot (vhypot [a1 a2]))
+(defprotocol VCosh (vcosh [a]))
+(defprotocol VSinh (vsinh [a]))
+(defprotocol VTanh (vtanh [a]))
 
 ;; ------------------ Comparison & Test FNs ------------------
 
