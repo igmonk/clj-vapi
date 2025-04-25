@@ -12,6 +12,7 @@
 (defprotocol VNeg (vneg [a]))
 
 (defprotocol VExp (vexp [a]))
+(defprotocol VExpm1 (vexpm1 [a]))
 (defprotocol VLog (vlog [a]))
 (defprotocol VLog10 (vlog10 [a]))
 (defprotocol VLog1P (vlog1p [a]))
