@@ -69,6 +69,7 @@
   p/VAbs (vabs [x] (vmap-md p/vabs x))
   p/VNeg (vneg [x] (vmap-md p/vneg x))
   p/VExp (vexp [x] (vmap-md p/vexp x))
+  p/VExpm1 (vexpm1 [x] (vmap-md p/vexpm1 x))
   p/VLog (vlog [x] (vmap-md p/vlog x))
   p/VLog10 (vlog10 [x] (vmap-md p/vlog10 x))
   p/VLog1P (vlog1p [x] (vmap-md p/vlog1p x))

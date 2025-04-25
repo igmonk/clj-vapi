@@ -104,6 +104,16 @@
   float/1 (vexp [a] (vmap-exp FloatVector a))
   double/1 (vexp [a] (vmap-exp DoubleVector a)))
 
+;; ------------------ vexpm1 ------------------
+
+(defmacro vmap-expm1
+  [v-type a]
+  `(lanewise ~v-type math/expm1 VectorOperators/EXPM1 ~a))
+
+(extend-protocol p/VExpm1
+  float/1 (vexpm1 [a] (vmap-expm1 FloatVector a))
+  double/1 (vexpm1 [a] (vmap-expm1 DoubleVector a)))
+
 ;; ------------------ vlog ------------------
 
 (defmacro vmap-log

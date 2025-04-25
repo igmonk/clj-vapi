@@ -18,6 +18,7 @@
 (defn vneg [x] (p/vneg x))
 
 (defn vexp [x] (p/vexp x))
+(defn vexpm1 [x] (p/vexpm1 x))
 (defn vlog [x] (p/vlog x))
 (defn vlog10 [x] (p/vlog10 x))
 (defn vlog1p [x] (p/vlog1p x))
