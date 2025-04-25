@@ -482,3 +482,14 @@
   int/1 (vbit-and-not [a1 a2] (lanewise-bit-and-not IntVector a1 a2))
   long/1 (vbit-and-not [a1 a2] (lanewise-bit-and-not LongVector a1 a2)))
 
+;; ------------------ MISC ------------------
+(defmacro lanewise-zomo
+  [v-type a]
+  `(lanewise ~v-type #(if (= % 0) 0 -1) VectorOperators/ZOMO ~a))
+
+(extend-protocol p/VZomo
+  byte/1 (vzomo [a] (lanewise-zomo ByteVector a))
+  short/1 (vzomo [a] (lanewise-zomo ShortVector a))
+  int/1 (vzomo [a] (lanewise-zomo IntVector a))
+  long/1 (vzomo [a] (lanewise-zomo LongVector a)))
+

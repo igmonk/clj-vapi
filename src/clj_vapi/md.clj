@@ -97,5 +97,6 @@
   p/VBitOr (vbit-or [x1 x2] (vmap-md p/vbit-or x1 x2))
   p/VBitXor (vbit-xor [x1 x2] (vmap-md p/vbit-xor x1 x2))
   p/VBitNot (vbit-not [x] (vmap-md p/vbit-not x))
-  p/VBitAndNot (vbit-and-not [x1 x2] (vmap-md p/vbit-and-not x1 x2)))
+  p/VBitAndNot (vbit-and-not [x1 x2] (vmap-md p/vbit-and-not x1 x2))
+  p/VZomo (vzomo [x] (vmap-md p/vzomo x)))
 
