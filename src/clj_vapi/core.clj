@@ -64,3 +64,6 @@
 (defn vbit-not [x] (p/vbit-not x))
 (defn vbit-and-not [x1 x2] (p/vbit-and-not x1 x2))
 
+;; ------------------ MISC ------------------
+(defn vzomo [x] (p/vzomo x))
+

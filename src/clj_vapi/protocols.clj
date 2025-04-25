@@ -58,3 +58,6 @@
 (defprotocol VBitNot (vbit-not [a]))
 (defprotocol VBitAndNot (vbit-and-not [a1 a2]))
 
+;; ------------------ MISC ------------------
+(defprotocol VZomo (vzomo [a]))
+
