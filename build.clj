@@ -1,29 +1,27 @@
 (ns build
-  (:refer-clojure :exclude [test])
-  (:require [clojure.tools.build.api :as b] ; for b/git-count-revs
-            [org.corfield.build :as bb]))
+  (:require [clojure.tools.build.api :as b]))
 
 (def lib 'com.github.igmonk/clj-vapi)
 (def version "0.1.0-SNAPSHOT")
-#_ ; alternatively, use MAJOR.MINOR.COMMITS:
-(def version (format "1.0.%s" (b/git-count-revs nil)))
+;; Alternatively, use MAJOR.MINOR.COMMITS:
+;; (def version (format "1.0.%s" (b/git-count-revs nil)))
+(def class-dir "target/classes")
+(def jar-file (format "target/%s-%s.jar" (name lib) version))
 
-(defn test "Run the tests." [opts]
-  (bb/run-tests opts))
+;; delay to defer side effects (artifact downloads)
+(def basis (delay (b/create-basis {:project "deps.edn"})))
 
-(defn ci "Run the CI pipeline of tests (and build the JAR)." [opts]
-  (-> opts
-      (assoc :lib lib :version version)
-      (bb/run-tests)
-      (bb/clean)
-      (bb/jar)))
+(defn clean [_]
+  (b/delete {:path "target"}))
 
-(defn install "Install the JAR locally." [opts]
-  (-> opts
-      (assoc :lib lib :version version)
-      (bb/install)))
+(defn jar [_]
+  (b/write-pom {:class-dir class-dir
+                :lib lib
+                :version version
+                :basis @basis
+                :src-dirs ["src"]})
+  (b/copy-dir {:src-dirs ["src" "resources"]
+               :target-dir class-dir})
+  (b/jar {:class-dir class-dir
+          :jar-file jar-file}))
 
-(defn deploy "Deploy the JAR to Clojars." [opts]
-  (-> opts
-      (assoc :lib lib :version version)
-      (bb/deploy)))
