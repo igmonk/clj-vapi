@@ -1,8 +1,8 @@
 (ns clj-vapi.vbit-or-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vbit-or]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vbit-or]]))
+            [clojure.test :refer [deftest testing]]))
 
 (def in1 [2r0000 2r0001 2r0010 2r0100 2r1000 2r0011 2r0110 2r1100 2r1001])
 (def in2 [2r1111 2r1111 2r1111 2r1111 2r1111 2r0111 2r0111 2r0111 2r0110])

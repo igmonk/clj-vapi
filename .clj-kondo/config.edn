@@ -1,0 +1,9 @@
+{:linters {:missing-docstring {:level :off}
+           :unsorted-required-namespaces {:level :warning}
+           :single-key-in {:level :warning}
+           :used-underscored-binding {:level :warning}
+           :unused-value {:level :warning}
+           :redundant-call {:level :warning}
+           :redundant-str-call {:level :warning}
+           :warn-on-reflection {:level :off}
+           :refer-all {:exclude [clj-vapi.1d clj-vapi.md]}}}

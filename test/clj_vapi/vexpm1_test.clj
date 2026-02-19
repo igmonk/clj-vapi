@@ -1,9 +1,9 @@
 (ns clj-vapi.vexpm1-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vexpm1]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vexpm1]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 
@@ -13,9 +13,9 @@
 (defn run-floating-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor range-1-11-expm1)
-     (vexpm1 (array-ctor range-1-11))))
+   epsilon
+   (array-ctor range-1-11-expm1)
+   (vexpm1 (array-ctor range-1-11))))
 
 (deftest vexpm1-test
   (testing "vexpm1 floating"

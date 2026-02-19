@@ -1,8 +1,8 @@
 (ns clj-vapi.vzomo-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vzomo]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vzomo]]))
+            [clojure.test :refer [deftest testing]]))
 
 (def args [-3 0 3 -2 0 2 -1 0 1])
 (def result (map #(if (= % 0) 0 -1) args))

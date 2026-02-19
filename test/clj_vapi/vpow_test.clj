@@ -1,9 +1,9 @@
 (ns clj-vapi.vpow-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vpow]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vpow]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 (def range-1-11 (map float (range 1 11)))

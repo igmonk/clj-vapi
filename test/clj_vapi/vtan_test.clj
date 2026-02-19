@@ -1,9 +1,9 @@
 (ns clj-vapi.vtan-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vtan]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vtan]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 
@@ -13,9 +13,9 @@
 (defn run-vtan-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor angles-tan)
-     (vtan (array-ctor angles))))
+   epsilon
+   (array-ctor angles-tan)
+   (vtan (array-ctor angles))))
 
 (deftest vtan-test
   (testing "vtan"

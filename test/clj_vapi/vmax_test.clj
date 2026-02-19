@@ -1,6 +1,6 @@
 (ns clj-vapi.vmax-test
-  (:require [clojure.test :refer :all]
-            [clj-vapi.core :refer [vmax]]))
+  (:require [clj-vapi.core :refer [vmax]]
+            [clojure.test :refer [deftest is testing]]))
 
 (def range-1-11 (range 1 11))
 (def range-11-1 (reverse range-1-11))

@@ -1,5 +1,5 @@
 (ns clj-vapi.macros
-  (:require [clj-vapi.utils :refer :all]))
+  (:require [clj-vapi.utils :refer [array-meta]]))
 
 ;; ------------------ utils ------------------
 
@@ -41,9 +41,9 @@
 (defmacro vmap
   [v-type f v-expr a v & avs]
   `(vreduce ~v-type (vmap-reducer ~f idx# ~a)
-       (do (.intoArray ~v-expr ret# idx#) ret#)
-       idx# ret# (aclone ~a)
-       ~a ~v ~@avs))
+            (do (.intoArray ~v-expr ret# idx#) ret#)
+            idx# ret# (aclone ~a)
+            ~a ~v ~@avs))
 
 (defn vmap-reducer
   [f idx a]
@@ -79,14 +79,14 @@
 (defmacro lanewise-test
   ([v-type f v-op a]
    `(vreduce ~v-type (bool-reducer ~f idx#)
-        (do (.intoArray (.test v# ~v-op) ret# idx#) ret#)
-        idx# ret# (boolean-array (alength ~a))
-        ~a v#))
+             (do (.intoArray (.test v# ~v-op) ret# idx#) ret#)
+             idx# ret# (boolean-array (alength ~a))
+             ~a v#))
   ([v-type f v-op a1 a2]
    `(vreduce ~v-type (bool-reducer ~f idx#)
-        (do (.intoArray (.compare v1# ~v-op v2#) ret# idx#) ret#)
-        idx# ret# (boolean-array (alength ~a1))
-        ~a1 v1# ~a2 v2#)))
+             (do (.intoArray (.compare v1# ~v-op v2#) ret# idx#) ret#)
+             idx# ret# (boolean-array (alength ~a1))
+             ~a1 v1# ~a2 v2#)))
 
 (defn bool-reducer
   [f idx]

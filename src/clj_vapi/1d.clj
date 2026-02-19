@@ -6,9 +6,9 @@
                                  FloatVector
                                  DoubleVector
                                  VectorOperators))
-  (:require [clojure.math :as math]
+  (:require [clj-vapi.macros :refer [lanewise lanewise-bc lanewise-test vreduce-lanes]]
             [clj-vapi.protocols :as p]
-            [clj-vapi.macros :refer :all]))
+            [clojure.math :as math]))
 
 ;; ------------------ ARITH ------------------
 

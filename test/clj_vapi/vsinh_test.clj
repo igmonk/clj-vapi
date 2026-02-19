@@ -1,9 +1,9 @@
 (ns clj-vapi.vsinh-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vsinh]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vsinh]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 
@@ -13,9 +13,9 @@
 (defn run-vsinh-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor results)
-     (vsinh (array-ctor args))))
+   epsilon
+   (array-ctor results)
+   (vsinh (array-ctor args))))
 
 (deftest vsinh-test
   (testing "vsinh"

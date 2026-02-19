@@ -1,8 +1,8 @@
 (ns clj-vapi.vhypot-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vhypot]]
             [clj-vapi.test-utils :as tu]
-            [clj-vapi.core :refer [vhypot]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon (math/pow 10 -6))
 
@@ -22,10 +22,10 @@
 (defn run-vhypot-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor hypots)
-     (vhypot (array-ctor sides1)
-             (array-ctor sides2))))
+   epsilon
+   (array-ctor hypots)
+   (vhypot (array-ctor sides1)
+           (array-ctor sides2))))
 
 (deftest vhypot-test
   (testing "vhypot"

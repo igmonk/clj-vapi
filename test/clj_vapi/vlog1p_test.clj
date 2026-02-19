@@ -1,9 +1,9 @@
 (ns clj-vapi.vlog1p-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vlog1p]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vlog1p]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon (math/pow 10 -9))
 
@@ -14,9 +14,9 @@
 (defn run-floating-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor range-1-11-log1p)
-     (vlog1p (array-ctor range-1-11-powers))))
+   epsilon
+   (array-ctor range-1-11-log1p)
+   (vlog1p (array-ctor range-1-11-powers))))
 
 (deftest vlog1p-test
   (testing "vlog1p floating"

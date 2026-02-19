@@ -1,8 +1,8 @@
 (ns clj-vapi.vbit-not-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vbit-not]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vbit-not]]))
+            [clojure.test :refer [deftest testing]]))
 
 (def bin-literals
   [2r0000 2r0001 2r0010 2r0011

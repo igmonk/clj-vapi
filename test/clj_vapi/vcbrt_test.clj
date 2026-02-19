@@ -1,9 +1,9 @@
 (ns clj-vapi.vcbrt-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vcbrt]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vcbrt]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 
@@ -14,9 +14,9 @@
 (defn run-floating-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor range-1-11-cbrt)
-     (vcbrt (array-ctor range-1-11-cb))))
+   epsilon
+   (array-ctor range-1-11-cbrt)
+   (vcbrt (array-ctor range-1-11-cb))))
 
 (deftest vcbrt-test
   (testing "vcbrt floating"

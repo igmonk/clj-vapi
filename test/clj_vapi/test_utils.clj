@@ -1,7 +1,6 @@
 (ns clj-vapi.test-utils
   (:import (java.util Arrays))
-  (:require [clojure.test :refer :all]
-            [clj-vapi.utils :refer :all]))
+  (:require [clojure.test :refer [is]]))
 
 (defn equal-arrays?
   [a1 a2]

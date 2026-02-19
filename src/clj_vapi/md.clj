@@ -1,6 +1,6 @@
 (ns clj-vapi.md
-  (:require [clj-vapi.protocols :as p]
-            [clj-vapi.1d :refer :all]))
+  (:require [clj-vapi.1d :refer :all]
+            [clj-vapi.protocols :as p]))
 
 (defn reduce-array
   [f init x]
@@ -49,7 +49,7 @@
    `(with-type-check (type ~x) ~vtest-fn
       (if (.isArray (type (first ~x)))
         (into-array (map ~vtest-fn ~x))
-        (~vtest-fn ~x))))  
+        (~vtest-fn ~x))))
   ([vtest-fn x1 x2]
    `(with-type-check (type ~x1) ~vtest-fn
       (if (.isArray (type (first ~x1)))

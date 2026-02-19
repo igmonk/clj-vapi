@@ -1,8 +1,8 @@
 (ns clj-vapi.vtest-eq-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vtest-eq?]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vtest-eq?]]))
+            [clojure.test :refer [deftest testing]]))
 
 (def range-1-11 (range 1 11))
 (def range-2-12 (range 2 12))

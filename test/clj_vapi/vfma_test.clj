@@ -1,8 +1,8 @@
 (ns clj-vapi.vfma-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vfma]]
             [clj-vapi.test-utils :as tu]
-            [clj-vapi.core :refer [vfma]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon (math/pow 10 -6))
 

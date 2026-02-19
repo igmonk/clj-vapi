@@ -1,7 +1,7 @@
 (ns clj-vapi.core
-  (:require [clj-vapi.protocols :as p]
-            [clj-vapi.1d :refer :all]
-            [clj-vapi.md :refer :all]))
+  (:require [clj-vapi.1d :refer :all]
+            [clj-vapi.md :refer :all]
+            [clj-vapi.protocols :as p]))
 
 ;; ------------------ ARITH ------------------
 

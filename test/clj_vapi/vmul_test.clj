@@ -1,8 +1,8 @@
 (ns clj-vapi.vmul-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vmul]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vmul]]))
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 

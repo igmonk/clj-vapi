@@ -1,9 +1,9 @@
 (ns clj-vapi.vsin-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vsin]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vsin]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 
@@ -13,9 +13,9 @@
 (defn run-vsin-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor angles-sin)
-     (vsin (array-ctor angles))))
+   epsilon
+   (array-ctor angles-sin)
+   (vsin (array-ctor angles))))
 
 (deftest vsin-test
   (testing "vsin"

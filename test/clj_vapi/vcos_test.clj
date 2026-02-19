@@ -1,9 +1,9 @@
 (ns clj-vapi.vcos-test
-  (:require [clojure.test :refer :all]
-            [clojure.math :as math]
+  (:require [clj-vapi.core :refer [vcos]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vcos]]))
+            [clojure.math :as math]
+            [clojure.test :refer [deftest testing]]))
 
 (def epsilon 1e-6)
 
@@ -13,9 +13,9 @@
 (defn run-vcos-tests
   [array-ctor]
   (tu/equalish-arrays?
-     epsilon
-     (array-ctor angles-cos)
-     (vcos (array-ctor angles))))
+   epsilon
+   (array-ctor angles-cos)
+   (vcos (array-ctor angles))))
 
 (deftest vcos-test
   (testing "vcos"

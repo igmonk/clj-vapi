@@ -1,8 +1,8 @@
 (ns clj-vapi.vtest-neg-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vtest-neg?]]
             [clj-vapi.test-utils :as tu]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vtest-neg?]]))
+            [clojure.test :refer [deftest testing]]))
 
 (def ones (take 10 (repeat 1)))
 (def neg-ones (take 10 (repeat -1)))

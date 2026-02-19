@@ -1,7 +1,7 @@
 (ns clj-vapi.vprod-test
-  (:require [clojure.test :refer :all]
+  (:require [clj-vapi.core :refer [vprod]]
             [clj-vapi.utils :as u]
-            [clj-vapi.core :refer [vprod]]))
+            [clojure.test :refer [deftest is testing]]))
 
 (def range-1-11 (range 1 11))
 
