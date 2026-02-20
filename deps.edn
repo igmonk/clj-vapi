@@ -1,8 +1,8 @@
 {:paths ["src", "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
+ :deps {org.clojure/clojure {:mvn/version "1.12.4"}}
  :aliases
  {:build {:deps {io.github.clojure/tools.build
-                 {:git/tag "v0.10.11" :git/sha "c6c670a"}}
+                 {:git/tag "v0.10.12" :git/sha "97c5562"}}
           :ns-default build}
   :test {:extra-paths ["test"]
          :jvm-opts ["--add-modules" "jdk.incubator.vector"]
@@ -17,6 +17,6 @@
   :outdated {:deps {com.github.liquidz/antq {:mvn/version "2.11.1276"}}
              :main-opts ["-m" "antq.core"]}
   :cljfmt {:deps {io.github.weavejester/cljfmt
-                  {:git/tag "0.15.6" :git/sha "5498e22"}}}
-  :lint {:deps {clj-kondo/clj-kondo {:mvn/version "2025.10.23"}}}}}
+                  {:git/tag "0.16.0" :git/sha "646b593"}}}
+  :lint {:deps {clj-kondo/clj-kondo {:mvn/version "2026.01.19"}}}}}
 
